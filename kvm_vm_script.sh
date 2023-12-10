@@ -12,7 +12,22 @@ echo "Network in bridge (br0) mode by default"
 read -p "Do you have an ISO file for installation? (Y/n): " has_iso
 
 if [[ $has_iso =~ ^[Yy]$ || -z $has_iso ]]; then
-    read -p "Enter the absolute path where the ISO image is located (include the .iso image): " iso_path
+    read -p "Enter the absolute path where the ISO files are located (omit the las '/'): " iso_directory
+
+    # List available .iso files in the specified directory
+    iso_files=("$iso_directory"/*.iso)
+
+    if [ ${#iso_files[@]} -eq 0 ]; then
+        echo "No .iso files found in the specified directory."
+        exit 1
+    fi
+
+    echo "Available .iso files:"
+    ls "$iso_directory"/*.iso
+
+    # Prompt user to choose an .iso file
+    read -p "Enter the name of the desired .iso file: " iso_file
+    iso_path="$iso_directory/$iso_file"
     cdrom_option="--cdrom $iso_path"
     location_option=""
 else
