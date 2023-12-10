@@ -1,6 +1,6 @@
 # README.md
 
-## Virt-install template
+## kvm_template.sh
 
 ```sh
 #!/bin/bash
