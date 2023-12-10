@@ -22,5 +22,5 @@ virt-install \
     
     #Choose one
     --cdrom /PATH/TO/ISO_FILE/ubuntu22.04.3-live-server.amd64.iso
-    #--location 'https://releases.ubuntu.com/22.04.3/ubuntu-22.04.3-live-server-amd64.iso'
+    #--cdrom https://releases.ubuntu.com/22.04.3/ubuntu-22.04.3-live-server-amd64.iso
 ```
