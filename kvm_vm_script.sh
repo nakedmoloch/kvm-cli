@@ -23,7 +23,7 @@ if [[ $has_iso =~ ^[Yy]$ || -z $has_iso ]]; then
     fi
 
     echo "Available .iso files:"
-    ls "$iso_directory"/*.iso
+    ls "$iso_directory" | grep *.iso
 
     # Prompt user to choose an .iso file
     read -p "Enter the name of the desired .iso file: " iso_file
