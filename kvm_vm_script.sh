@@ -29,11 +29,9 @@ if [[ $has_iso =~ ^[Yy]$ || -z $has_iso ]]; then
     read -p "Enter the name of the desired .iso file: " iso_file
     iso_path="$iso_directory/$iso_file"
     cdrom_option="--cdrom=$iso_path"
-    location_option=""
 else
     read -p "Enter the URL of the amd file: " iso_url
-    cdrom_option=""
-    location_option="--location='$iso_url'"
+    cdrom_option="--cdrom=$iso_url"
 fi
 
 # Run virt-install with the specified options
@@ -48,5 +46,4 @@ virt-install \
     --video qxl \
     --channel spicevmc \
     --console pty,target_type=serial \
-    $cdrom_option \
-    $location_option
+    $cdrom_option
