@@ -21,6 +21,6 @@ virt-install \
 --channel spicevmc \
 --console pty,target_type=serial \
 
-#Chose one:
+#Choose one:
 --cdrom /PATH/TO/ISO_IMAGE/<your_vm_distro_iso> 
 #--location '<your_vm_distro_http_download_link>'
