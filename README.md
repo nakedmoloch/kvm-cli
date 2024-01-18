@@ -1,6 +1,3 @@
-# README.md
-**Use case**: You may want to create the first virtual machine as a template for the following ones.
-
 ## kvm_template.sh
 
 ```sh
